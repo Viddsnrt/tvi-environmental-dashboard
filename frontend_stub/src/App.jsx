@@ -39,14 +39,14 @@ function App() {
 
   const fetchSummary = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/summary");
+      const res = await axios.get("http://tvi-environmental-dashboard-production.up.railway.app/api/summary");
       setSummary(res.data);
     } catch (err) { console.error("Gagal fetch summary:", err); }
   };
 
   const fetchHistory = async () => {
     try {
-      const res  = await axios.get("http://localhost:3000/api/data/raw");
+      const res  = await axios.get("http://tvi-environmental-dashboard-production.up.railway.app/api/data/raw");
       const data = res.data.data;
       setHistory(data);
 
@@ -74,7 +74,7 @@ function App() {
 
   const fetchInsight = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/insight");
+      const res = await axios.get("http://tvi-environmental-dashboard-production.up.railway.app/api/insight");
       setInsight(res.data);
     } catch (err) { console.error("Gagal fetch insight:", err); }
   };
@@ -94,7 +94,7 @@ function App() {
     setRefreshStatus(null);
     setRefreshMessage("");
     try {
-      const res = await axios.post("http://localhost:3000/api/run-detection");
+      const res = await axios.post("http://tvi-environmental-dashboard-production.up.railway.app/api/run-detection");
       setRefreshStatus("success");
       setRefreshMessage(res.data.message || "Deteksi selesai.");
       setTimeout(async () => {
