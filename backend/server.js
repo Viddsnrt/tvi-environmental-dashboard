@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const DATA_DIR = path.join(__dirname, "..", "dataset");
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, "..", "dataset");
 
 function loadCsv(filename) {
   return new Promise((resolve, reject) => {
