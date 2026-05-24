@@ -1,0 +1,5 @@
+[phases.setup]
+nixPkgs = ["python3"]
+
+[phases.install]
+cmds = ["pip3 install pandas scikit-learn numpy"]

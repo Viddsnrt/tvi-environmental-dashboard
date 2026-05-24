@@ -207,7 +207,7 @@ app.get("/api/insight", async (req, res) => {
 app.post("/api/run-detection", (req, res) => {
   const scriptPath = path.join(__dirname, "..", "ai_model", "train_anomaly_model.py");
   console.log(`[run-detection] Menjalankan: python "${scriptPath}"`);
-  exec(`python "${scriptPath}"`, { timeout: 120000 }, (err, stdout, stderr) => {
+  exec(`python3 "${scriptPath}"`, { timeout: 120000 }, (err, stdout, stderr) => {
     if (err) {
       console.error("[run-detection] Error:", stderr || err.message);
       return res.status(500).json({ success: false, message: "Deteksi anomali gagal.", error: stderr || err.message });
