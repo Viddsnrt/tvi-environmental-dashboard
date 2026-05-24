@@ -1,0 +1,4 @@
+sensor_id,location,records,avg_temperature_c,avg_humidity_pct,avg_co2_ppm,avg_pm25_ugm3,avg_light_lux,avg_noise_db,detected_anomalies,avg_risk_index
+ENV-01,Indoor Lab A,1344,26.556,68.879,607.342,20.239,293.255,47.139,39,0.339
+ENV-02,Indoor Lab B,1344,25.862,73.503,553.173,18.528,294.231,43.882,40,0.315
+ENV-03,Outdoor Area,1344,27.837,76.891,462.917,26.497,294.798,51.091,63,0.376

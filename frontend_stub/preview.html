@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Environmental Monitoring API Preview</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; background: #f7f7f7; }
+    .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    button { padding: 10px 14px; margin: 4px; cursor: pointer; }
+    pre { background: #111; color: #eee; padding: 16px; border-radius: 8px; overflow-x: auto; max-height: 480px; }
+  </style>
+</head>
+<body>
+  <h1>Environmental Monitoring API Preview</h1>
+  <div class="card">
+    <button onclick="loadEndpoint('/api/summary')">Summary</button>
+    <button onclick="loadEndpoint('/api/data/raw?limit=5')">Raw Data</button>
+    <button onclick="loadEndpoint('/api/data/clean?limit=5')">Clean Data</button>
+    <button onclick="loadEndpoint('/api/anomaly?limit=5')">Anomalies</button>
+    <button onclick="loadEndpoint('/api/visualization?sensor_id=ENV-01&variable=temperature_c')">Visualization Data</button>
+  </div>
+
+  <div class="card">
+    <h2>Response</h2>
+    <pre id="output">Click one endpoint button above.</pre>
+  </div>
+
+  <script>
+    async function loadEndpoint(endpoint) {
+      const response = await fetch("http://localhost:3000" + endpoint);
+      const data = await response.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>

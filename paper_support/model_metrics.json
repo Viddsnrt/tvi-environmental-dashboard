@@ -1,0 +1,15 @@
+{
+  "method": "Spike Detection (Delta + Z-Score + Rolling Mean)",
+  "target_parameter": "temperature_c",
+  "delta_threshold_c": 2.5,
+  "zscore_threshold": 2.5,
+  "rolling_window": 8,
+  "rolling_threshold_c": 3.0,
+  "total_records": 4032,
+  "total_sensors": 3,
+  "true_anomalies": 90,
+  "detected_anomalies": 94,
+  "precision": 0.3617,
+  "recall": 0.3778,
+  "f1_score": 0.3696
+}
